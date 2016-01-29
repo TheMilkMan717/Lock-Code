@@ -7,7 +7,7 @@ def welcome():
     subprocess.call("clear")
     print "Welcome to the Code Generator for your phone"
     subprocess.call(["cat", "asciiText.txt"])
-
+    print
 welcome()
 
 menuOption = raw_input("1 for generator\n2 to recover your passcode\n-->")
@@ -20,6 +20,7 @@ if menuOption == 1:
     password2 = ""
 
     welcome()
+    raw_input("***Caution***\nIf you forget your password you are about to create,\nyou will not be able to recover your phone code...\nPress [Enter] to continue")
 
     while(not passCorrect and tries < 3):
         password = raw_input("Enter your password to encrypt\n-->")
