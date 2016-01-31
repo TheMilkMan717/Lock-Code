@@ -31,9 +31,8 @@ if menuOption == 1:
         elif tries < 2:
             print "Sorry, Try again..."
 
-    passwordHash = encryption.hash256(password)
-
     if passCorrect:
+        passwordHash = encryption.hash256(password)
         print "Your new code is\n-->",
   
         codeFile = open(".codes.txt")
