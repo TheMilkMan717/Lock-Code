@@ -1,13 +1,14 @@
 #!/usr/bin/python
 
 import encryption
-import random, datetime, subprocess, time
+import random, datetime, os, time
 
 def welcome():
-    subprocess.call("clear")
+    os.system("clear")
     print "Welcome to the Code Generator for your phone"
-    subprocess.call(["cat", "asciiText.txt"])
+    os.system("cat asciiText.txt")
     print
+
 welcome()
 
 menuOption = raw_input("1 for generator\n2 to recover your passcode\n-->")
