@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import encryption
-import random, datetime, os, time
+import random, datetime, os, time, getpass
 
 def welcome():
     os.system("clear")
@@ -24,8 +24,8 @@ if menuOption == 1:
     raw_input("***Caution***\nIf you forget your password you are about to create,\nyou will not be able to recover your phone code...\nPress [Enter] to continue")
 
     while(not passCorrect and tries < 3):
-        password = raw_input("Enter your password to encrypt\n-->")
-        password2 = raw_input("Enter your password again\n-->")
+        password = getpass.getpass("Enter your password to encrypt\n-->")
+        password2 = getpass.getpass("Enter your password again\n-->")
         tries += 1
         if password == password2:
             passCorrect = True
@@ -71,7 +71,7 @@ elif menuOption == 2:
     
     encrypted = passcodes.read()
     
-    password = raw_input("Please enter your password\n-->")
+    password = getpass.getpass("Please enter your password\n-->")
     passwordHash = encryption.hash256(password)
 
     cipher = encryption.AESCipher(passwordHash)
